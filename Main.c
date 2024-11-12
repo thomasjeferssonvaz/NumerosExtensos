@@ -522,6 +522,7 @@ void extenso()
 void exibirMenu()
 {
   int opcaoMenu;
+  fflush(stdin);
   printf("1. Escrever um numero por extenso\n");
   printf("2. Imprimir todos os numeros do arquivo em tela\n");
   printf("3. Sair\n");
@@ -535,7 +536,7 @@ void exibirMenu()
     printf("Caso 2\n");
     break;
   case 3:
-    printf("Caso 3\n");
+    printf("***Programa encerrado***\nGrato pela utilizaçao\nVolte sempre :)\n");
     break;
   default:
     printf("Opcao invalida, por favor tente novamente\n");
