@@ -4,10 +4,63 @@
 #include <string.h>
 
 void DezenaZeradasExtenso(int Dezena){
-  //Projetar
+  switch (Dezena){
+  case 2:
+    printf("vinte Reais\n");
+    break;
+  case 3:
+    printf("trinta Reais\n");
+    break;
+  case 4:
+    printf("quarenta Reais\n");
+    break;
+  case 5:
+    printf("cinquenta Reais\n");
+    break;
+  case 6:
+    printf("sessenta Reais\n");
+    break;
+  case 7:
+    printf("setenta Reais\n");
+    break;
+  case 8:
+    printf("oitenta Reais\n");
+    break;
+  case 9:
+    printf("noventa Reais\n");
+    break;
+  } 
 }
 void CentenasZeradasExtenso(int Centena){
-  //Projetar
+  switch (Centena){
+  case 1:
+    printf("Cem Reais\n");
+    break;
+  case 2:
+    printf("Duzentos Reais\n");
+    break;
+  case 3:
+    printf("Trezentos Reais\n");
+    break;
+  case 4:
+    printf("Quatrocentos Reais\n");
+    break;
+  case 5:
+    printf("Quinhentos Reais\n");
+    break;
+  case 6:
+    printf("Seiscentos Reais\n");
+    break;
+  case 7:
+    printf("Setecentos Reais\n");
+    break;
+  case 8:
+    printf("Oitocentos Reais\n");
+    break;
+  case 9:
+    printf("Novecentos Reais\n");
+    break;
+  } 
 }
 
 void UnidadeExtenso(int Unidade){
@@ -28,19 +81,16 @@ void UnidadeExtenso(int Unidade){
     printf("cinco Reais\n");
     break;
   case 6:
-    printf("seis \n");
+    printf("seis Reais\n");
     break;
   case 7:
-    printf("sete \n");
+    printf("sete Reais\n");
     break;
   case 8:
-    printf("oito \n");
+    printf("oito Reais\n");
     break;
   case 9:
-    printf("nove \n");
-    break;
-  default:
-    printf("");
+    printf("nove Reais\n");
     break;
   } 
   printf("\n");
@@ -78,9 +128,6 @@ void DezAVinteExtenso(int Unidade){
   case 9:
     printf("dezenove Reais\n");
     break;
-  default:
-    printf("");
-    break;
   }
 }
 
@@ -109,9 +156,6 @@ void DezenaExtenso(int Dezena){
     break;
   case 9:
     printf("noventa e ");
-    break;
-  default:
-    printf("");
     break;
   } 
 }
@@ -145,9 +189,6 @@ void CentenaExtenso(int Centena){
   case 9:
     printf("Novecentos e ");
     break;
-  default:
-    printf("");
-    break;
   } 
 }
 
@@ -159,7 +200,8 @@ void conversor(int num_algarismo){
   Centena = fmod((num_algarismo / 100), 10);
   Dezena = fmod((num_algarismo / 10), 10);
   Unidade = fmod(num_algarismo, 10);
-  if (Centena == 0 && Unidade == 0) {
+  
+  if (Dezena == 0 && Unidade == 0) {
     CentenasZeradasExtenso(Centena);
   } else {
     CentenaExtenso(Centena);
