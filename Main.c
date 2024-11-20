@@ -92,92 +92,6 @@ void DezenaCentavosExtenso(int DezenaCentavos)
   }
 }
 
-void MilhaoExtenso(int Milhao)
-{
-  switch (Milhao)
-  {
-  case 1:
-    printf("um milhao ");
-    fprintf(arquivo,"um milhao");
-    break;
-  case 2:
-    printf("dois milhoes ");
-    fprintf(arquivo,"um milhao");
-    break;
-  case 3:
-    printf("tres milhoes ");
-    fprintf(arquivo,"um milhao");
-    break;
-  case 4:
-    printf("quatro milhoes ");
-    fprintf(arquivo,"um milhao");
-    break;
-  case 5:
-    printf("cinco milhoes ");
-    fprintf(arquivo,"um milhao");
-    break;
-  case 6:
-    printf("seis milhoes ");
-    fprintf(arquivo,"um milhao");
-    break;
-  case 7:
-    printf("sete milhoes ");
-    fprintf(arquivo,"um milhao");
-    break;
-  case 8:
-    printf("oito milhoes ");
-    fprintf(arquivo,"um milhao");
-    break;
-  case 9:
-    printf("nove milhoes ");
-    fprintf(arquivo,"um milhao");
-    break;
-  }
-}
-
-void MilhaoZeradoExtenso(int Milhao)
-{
-  switch (Milhao)
-  {
-  case 1:
-    printf("um milhao ");
-    fprintf(arquivo,"um milhao");
-    break;
-  case 2:
-    printf("dois milhoes ");
-    fprintf(arquivo,"um milhao");
-    break;
-  case 3:
-    printf("tres milhoes ");
-    fprintf(arquivo,"um milhao");
-    break;
-  case 4:
-    printf("quatro milhoes ");
-    fprintf(arquivo,"um milhao");
-    break;
-  case 5:
-    printf("cinco milhoes ");
-    fprintf(arquivo,"um milhao");
-    break;
-  case 6:
-    printf("seis milhoes ");
-    fprintf(arquivo,"um milhao");
-    break;
-  case 7:
-    printf("sete milhoes ");
-    fprintf(arquivo,"um milhao");
-    break;
-  case 8:
-    printf("oito milhoes ");
-    fprintf(arquivo,"um milhao");
-    break;
-  case 9:
-    printf("nove milhoes ");
-    fprintf(arquivo,"um milhao");
-    break;
-  }
-}
-
 void CentenaDeMilharZeradaExtenso(int CentenaDeMilhar){
   switch (CentenaDeMilhar)
   {
@@ -638,22 +552,17 @@ void CentenaExtenso(int Centena)
 
 void conversor(float num_algarismo)
 {
-  int Milhao, CentenaDeMilhar, DezenaDeMilhar, Milhar, Centena, Dezena, Unidade, DezenaCentavos, UnidadeCentavos;
-  Milhao = fmod((num_algarismo / 1000000), 10);
-  CentenaDeMilhar = fmod((num_algarismo / 100000), 10);
-  DezenaDeMilhar = fmod((num_algarismo / 10000), 10);
-  Milhar = fmod((num_algarismo / 1000), 10);
-  Centena = fmod((num_algarismo / 100), 10);
-  Dezena = fmod((num_algarismo / 10), 10);
-  Unidade = fmod(num_algarismo, 10);
-  DezenaCentavos = fmod((num_algarismo * 10), 10);
-  UnidadeCentavos = fmod((num_algarismo * 100), 10)+0.01;
-  if (Milhao == 0 && CentenaDeMilhar ==0)
-  {
-    MilhaoZeradoExtenso(Milhao);
-  } else {
-    MilhaoExtenso(Milhao);
-  }
+  int CentenaDeMilhar, DezenaDeMilhar, Milhar, Centena, Dezena, Unidade, DezenaCentavos, UnidadeCentavos;
+  int parteInteira = (int)num_algarismo;
+  int parteDecimal = (int)roundf((num_algarismo - parteInteira) * 100);
+  CentenaDeMilhar = (parteInteira % 1000000) / 100000;
+  DezenaDeMilhar = (parteInteira % 100000) / 10000;
+  Milhar = (parteInteira % 10000) / 1000;
+  Centena = (parteInteira % 1000) / 100;
+  Dezena = (parteInteira % 100) / 10;
+  Unidade = parteInteira % 10;
+  DezenaCentavos = parteDecimal / 10;
+  UnidadeCentavos = parteDecimal % 10;
   
   if (CentenaDeMilhar == 0 && DezenaDeMilhar ==0)
   {
@@ -703,7 +612,7 @@ void conversor(float num_algarismo)
     UnidadeExtenso(Unidade);
   }
 
-  if(Milhao != 0 || CentenaDeMilhar != 0 || DezenaDeMilhar != 0 || Milhar != 0 || Centena != 0 || Dezena != 0 || Unidade!= 0){
+  if(CentenaDeMilhar != 0 || DezenaDeMilhar != 0 || Milhar != 0 || Centena != 0 || Dezena != 0 || Unidade!= 0){
     printf("Reais e ");
     fprintf(arquivo,"Reais e ");
   }
@@ -728,7 +637,7 @@ void conversor(float num_algarismo)
     UnidadeCentavosExtenso(UnidadeCentavos);
   }
   if(DezenaCentavos != 0 || UnidadeCentavos != 0){
-    printf(" Centavos\n");
+    printf(" Centavos");
     fprintf(arquivo," Centavos");
   }
   
@@ -736,28 +645,22 @@ void conversor(float num_algarismo)
 
 void extenso()
 {
-  float num_algarismo;
+  float num_algarismo = 0.00;
   printf("Digite o numero a ser escrito por extenso: ");
   scanf("%f", &num_algarismo);
+  printf("Value read: %f\n", num_algarismo);
   printf("Convertendo\n");
   printf("O valor %.2f por extenso fica: ", num_algarismo);
   conversor(num_algarismo);
+  printf("\n");
   fprintf(arquivo, ".\n");
   
 }
 
-void criartxt(){
-  if(arquivo == NULL){
-    printf("Erro ao abrir arquivo");
-  } else {
-    printf("Sucesso ao abrir arquivo");
-  }
-}
 void exibirMenu()
 {
   int opcaoMenu;
   fflush(stdin);
-  criartxt();
   printf("1. Escrever um numero por extenso\n");
   printf("2. Imprimir todos os numeros do arquivo em tela\n");
   printf("3. Sair\n");
@@ -765,10 +668,14 @@ void exibirMenu()
   switch (opcaoMenu)
   {
   case 1:
+    arquivo = fopen("numerosextensos.txt", "a+");
     extenso();
+    fclose(arquivo);
     break;
   case 2:
+    arquivo = fopen("numerosextensos.txt", "a+");
     printf("Caso 2\n");
+    fclose(arquivo);
     break;
   case 3:
     printf("***Programa encerrado***\nGrato pela utilizaçao\nVolte sempre :)\n");
@@ -783,6 +690,5 @@ void exibirMenu()
 
 int main()
 {
-  arquivo = fopen("numerosextensos.txt", "a+");
   exibirMenu();
 }
