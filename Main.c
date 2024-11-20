@@ -356,7 +356,7 @@ void exibirMenu()
   switch (opcaoMenu)
   {
   case 1:
-    arquivo = fopen("numerosextensos.txt", "a+");
+    arquivo = fopen("txt/numerosextensos.txt", "a+");
     extenso();
     fclose(arquivo);
     break;
