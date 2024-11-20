@@ -3,36 +3,48 @@
 #include <math.h>
 #include <string.h>
 
+//Variavel global do arquivo
+FILE* arquivo;
+
 void UnidadeCentavosExtenso(int UnidadeCentavos)
 {
   switch (UnidadeCentavos)
   {
   case 1:
-    printf(" e um");
+    printf("um");
+    fprintf(arquivo,"um");
     break;
   case 2:
-    printf(" e dois");
+    printf("dois");
+    fprintf(arquivo,"dois");
     break;
   case 3:
-    printf(" e tres");
+    printf("tres");
+    fprintf(arquivo,"tres");
     break;
   case 4:
-    printf(" e quatro");
+    printf("quatro");
+    fprintf(arquivo,"quatro");
     break;
   case 5:
-    printf(" e cinco");
+    printf("cinco");
+    fprintf(arquivo,"cinco");
     break;
   case 6:
-    printf(" e seis");
+    printf("seis");
+    fprintf(arquivo,"seis");
     break;
   case 7:
-    printf(" e sete");
+    printf("sete");
+    fprintf(arquivo,"sete");
     break;
   case 8:
-    printf(" e oito");
+    printf("oito");
+    fprintf(arquivo,"oito");
     break;
   case 9:
-    printf(" e nove");
+    printf("nove");
+    fprintf(arquivo,"nove");
     break;
   }
 }
@@ -42,65 +54,40 @@ void DezenaCentavosExtenso(int DezenaCentavos)
   switch (DezenaCentavos)
   {
   case 1:
-    printf(" e dez");
+    printf("dez");
+    fprintf(arquivo,"dez");
     break;
   case 2:
-    printf(" e vinte");
+    printf("vinte");
+    fprintf(arquivo,"vinte");
     break;
   case 3:
-    printf(" e trinta");
+    printf("trinta");
+    fprintf(arquivo,"trinta");
     break;
   case 4:
-    printf(" e quarenta");
+    printf("quarenta");
+    fprintf(arquivo,"quarenta");
     break;
   case 5:
-    printf(" e cinquenta");
+    printf("cinquenta");
+    fprintf(arquivo,"cinquenta");
     break;
   case 6:
-    printf(" e sessenta");
+    printf("sessenta");
+    fprintf(arquivo,"sessenta");
     break;
   case 7:
-    printf(" e setenta");
+    printf("setenta");
+    fprintf(arquivo,"setenta");
     break;
   case 8:
-    printf(" e oitenta");
+    printf("oitenta");
+    fprintf(arquivo,"oitenta");
     break;
   case 9:
-    printf(" e noventa");
-    break;
-  }
-}
-
-void DezenaCentavosZeradaExtenso(int DezenaCentavos)
-{
-  switch (DezenaCentavos)
-  {
-  case 1:
-    printf(" e dez");
-    break;
-  case 2:
-    printf(" e vinte");
-    break;
-  case 3:
-    printf(" e trinta");
-    break;
-  case 4:
-    printf(" e quarenta");
-    break;
-  case 5:
-    printf(" e cinquenta");
-    break;
-  case 6:
-    printf(" e sessenta");
-    break;
-  case 7:
-    printf(" e setenta");
-    break;
-  case 8:
-    printf(" e oitenta");
-    break;
-  case 9:
-    printf(" e noventa");
+    printf("noventa");
+    fprintf(arquivo,"noventa");
     break;
   }
 }
@@ -111,30 +98,39 @@ void MilhaoExtenso(int Milhao)
   {
   case 1:
     printf("um milhao ");
+    fprintf(arquivo,"um milhao");
     break;
   case 2:
     printf("dois milhoes ");
+    fprintf(arquivo,"um milhao");
     break;
   case 3:
     printf("tres milhoes ");
+    fprintf(arquivo,"um milhao");
     break;
   case 4:
     printf("quatro milhoes ");
+    fprintf(arquivo,"um milhao");
     break;
   case 5:
     printf("cinco milhoes ");
+    fprintf(arquivo,"um milhao");
     break;
   case 6:
     printf("seis milhoes ");
+    fprintf(arquivo,"um milhao");
     break;
   case 7:
     printf("sete milhoes ");
+    fprintf(arquivo,"um milhao");
     break;
   case 8:
     printf("oito milhoes ");
+    fprintf(arquivo,"um milhao");
     break;
   case 9:
     printf("nove milhoes ");
+    fprintf(arquivo,"um milhao");
     break;
   }
 }
@@ -145,30 +141,39 @@ void MilhaoZeradoExtenso(int Milhao)
   {
   case 1:
     printf("um milhao ");
+    fprintf(arquivo,"um milhao");
     break;
   case 2:
     printf("dois milhoes ");
+    fprintf(arquivo,"um milhao");
     break;
   case 3:
     printf("tres milhoes ");
+    fprintf(arquivo,"um milhao");
     break;
   case 4:
     printf("quatro milhoes ");
+    fprintf(arquivo,"um milhao");
     break;
   case 5:
     printf("cinco milhoes ");
+    fprintf(arquivo,"um milhao");
     break;
   case 6:
     printf("seis milhoes ");
+    fprintf(arquivo,"um milhao");
     break;
   case 7:
     printf("sete milhoes ");
+    fprintf(arquivo,"um milhao");
     break;
   case 8:
     printf("oito milhoes ");
+    fprintf(arquivo,"um milhao");
     break;
   case 9:
     printf("nove milhoes ");
+    fprintf(arquivo,"um milhao");
     break;
   }
 }
@@ -178,30 +183,39 @@ void CentenaDeMilharZeradaExtenso(int CentenaDeMilhar){
   {
   case 1:
     printf("cem ");
+    fprintf(arquivo,"cem ");
     break;
   case 2:
     printf("duzentos ");
+    fprintf(arquivo,"duzentos ");
     break;
   case 3:
     printf("trezentos ");
+    fprintf(arquivo,"trezentos ");
     break;
   case 4:
     printf("quatrocentos ");
+    fprintf(arquivo,"quatrocentos ");
     break;
   case 5:
     printf("quinhentos ");
+    fprintf(arquivo,"quinhentos ");
     break;
   case 6:
     printf("seiscentos ");
+    fprintf(arquivo,"seiscentos ");
     break;
   case 7:
     printf("setecentos ");
+    fprintf(arquivo,"setecentos ");
     break;
   case 8:
     printf("oitocentos ");
+    fprintf(arquivo,"oitocentos ");
     break;
   case 9:
     printf("novecentos ");
+    fprintf(arquivo,"novecentos ");
     break;
   }
 }
@@ -211,30 +225,39 @@ void CentenaDeMilharExtenso(int CentenaDeMilhar){
   {
   case 1:
     printf("cento e ");
+    fprintf(arquivo,"cento e ");
     break;
   case 2:
     printf("duzentos e ");
+    fprintf(arquivo,"duzentos e ");
     break;
   case 3:
     printf("trezentos e ");
+    fprintf(arquivo,"trezentos e ");
     break;
   case 4:
     printf("quatrocentos e ");
+    fprintf(arquivo,"quatrocentos e ");
     break;
   case 5:
     printf("quinhentos e ");
+    fprintf(arquivo,"quinhentos e ");
     break;
   case 6:
     printf("seiscentos e ");
+    fprintf(arquivo,"seiscentos e ");
     break;
   case 7:
     printf("setecentos e ");
+    fprintf(arquivo,"setecentos e ");
     break;
   case 8:
     printf("oitocentos e ");
+    fprintf(arquivo,"oitocentos e ");
     break;
   case 9:
     printf("novecentos e ");
+    fprintf(arquivo,"novecentos e ");
     break;
   }
 }
@@ -245,30 +268,39 @@ void DezenaDeMilharExtenso(int DezenaDeMilhar)
   {
   case 1:
     printf("dez ");
+    fprintf(arquivo,"dez ");
     break;
   case 2:
     printf("vinte ");
+    fprintf(arquivo,"vinte ");
     break;
   case 3:
     printf("trinta ");
+    fprintf(arquivo,"trinta ");
     break;
   case 4:
     printf("quarenta ");
+    fprintf(arquivo,"quarenta ");
     break;
   case 5:
     printf("cinquenta ");
+    fprintf(arquivo,"cinquenta ");
     break;
   case 6:
     printf("sessenta ");
+    fprintf(arquivo,"sessenta ");
     break;
   case 7:
     printf("setenta ");
+    fprintf(arquivo,"setenta ");
     break;
   case 8:
     printf("oitenta ");
+    fprintf(arquivo,"oitenta ");
     break;
   case 9:
     printf("noventa ");
+    fprintf(arquivo,"noventa ");
     break;
   }
 }
@@ -279,30 +311,39 @@ void DezenaDeMilharZeradaExtenso(int DezenaDeMilhar)
   {
   case 1:
     printf("dez ");
+    fprintf(arquivo,"um ");
     break;
   case 2:
     printf("vinte ");
+    fprintf(arquivo,"vinte ");
     break;
   case 3:
     printf("trinta ");
+    fprintf(arquivo,"trinta ");
     break;
   case 4:
     printf("quarenta ");
+    fprintf(arquivo,"quarenta ");
     break;
   case 5:
     printf("cinquenta ");
+    fprintf(arquivo,"cinquenta ");
     break;
   case 6:
     printf("sessenta ");
+    fprintf(arquivo,"sessenta ");
     break;
   case 7:
     printf("setenta ");
+    fprintf(arquivo,"setenta ");
     break;
   case 8:
     printf("oitenta ");
+    fprintf(arquivo,"oitenta ");
     break;
   case 9:
     printf("noventa ");
+    fprintf(arquivo,"noventa ");
     break;
   }
 }
@@ -313,30 +354,39 @@ void MilharExtenso(int Milhar)
   {
   case 1:
     printf("um ");
+    fprintf(arquivo,"um ");
     break;
   case 2:
     printf("dois ");
+    fprintf(arquivo,"dois ");
     break;
   case 3:
     printf("tres ");
+    fprintf(arquivo,"tres ");
     break;
   case 4:
     printf("quatro ");
+    fprintf(arquivo,"quatro ");
     break;
   case 5:
     printf("cinco ");
+    fprintf(arquivo,"cinco ");
     break;
   case 6:
     printf("seis ");
+    fprintf(arquivo,"seis ");
     break;
   case 7:
     printf("sete ");
+    fprintf(arquivo,"sete ");
     break;
   case 8:
     printf("oito ");
+    fprintf(arquivo,"oito ");
     break;
   case 9:
     printf("nove ");
+    fprintf(arquivo,"nove ");
     break;
   }
   printf("mil ");
@@ -348,27 +398,35 @@ void DezenaZeradasExtenso(int Dezena)
   {
   case 2:
     printf("vinte ");
+    fprintf(arquivo,"vinte ");
     break;
   case 3:
     printf("trinta ");
+    fprintf(arquivo,"trinta ");
     break;
   case 4:
     printf("quarenta ");
+    fprintf(arquivo,"quarenta ");
     break;
   case 5:
     printf("cinquenta ");
+    fprintf(arquivo,"cinquenta ");
     break;
   case 6:
     printf("sessenta ");
+    fprintf(arquivo,"sessenta ");
     break;
   case 7:
     printf("setenta ");
+    fprintf(arquivo,"setenta ");
     break;
   case 8:
     printf("oitenta ");
+    fprintf(arquivo,"oitenta ");
     break;
   case 9:
     printf("noventa ");
+    fprintf(arquivo,"noventa ");
     break;
   }
 }
@@ -379,30 +437,39 @@ void CentenasZeradasExtenso(int Centena)
   {
   case 1:
     printf("cem ");
+    fprintf(arquivo,"cem ");
     break;
   case 2:
     printf("duzentos ");
+    fprintf(arquivo,"duzentos ");
     break;
   case 3:
     printf("trezentos ");
+    fprintf(arquivo,"trezentos ");
     break;
   case 4:
     printf("quatrocentos ");
+    fprintf(arquivo,"quatrocentos ");
     break;
   case 5:
     printf("quinhentos ");
+    fprintf(arquivo,"quinhentos ");
     break;
   case 6:
     printf("seiscentos ");
+    fprintf(arquivo,"seiscentos ");
     break;
   case 7:
     printf("setecentos ");
+    fprintf(arquivo,"setecentos ");
     break;
   case 8:
     printf("oitocentos ");
+    fprintf(arquivo,"oitocentos ");
     break;
   case 9:
     printf("novecentos ");
+    fprintf(arquivo,"novecentos ");
     break;
   }
 }
@@ -413,33 +480,41 @@ void UnidadeExtenso(int Unidade)
   {
   case 1:
     printf("um ");
+    fprintf(arquivo,"um ");
     break;
   case 2:
     printf("dois ");
+    fprintf(arquivo,"dois ");
     break;
   case 3:
     printf("tres ");
+    fprintf(arquivo,"tres ");
     break;
   case 4:
     printf("quatro ");
+    fprintf(arquivo,"quatro ");
     break;
   case 5:
     printf("cinco ");
+    fprintf(arquivo,"cinco ");
     break;
   case 6:
     printf("seis ");
+    fprintf(arquivo,"seis ");
     break;
   case 7:
     printf("sete ");
+    fprintf(arquivo,"sete ");
     break;
   case 8:
     printf("oito ");
+    fprintf(arquivo,"oito ");
     break;
   case 9:
     printf("nove ");
+    fprintf(arquivo,"nove ");
     break;
   }
-  printf("");
 }
 
 void DezAVinteExtenso(int Unidade)
@@ -485,27 +560,35 @@ void DezenaExtenso(int Dezena)
   {
   case 2:
     printf("vinte e ");
+    fprintf(arquivo,"vinte e ");
     break;
   case 3:
     printf("trinta e ");
+    fprintf(arquivo,"trinta e ");
     break;
   case 4:
     printf("quarenta e ");
+    fprintf(arquivo,"quarenta e ");
     break;
   case 5:
     printf("cinquenta e ");
+    fprintf(arquivo,"cinquenta e ");
     break;
   case 6:
     printf("sessenta e ");
+    fprintf(arquivo,"sessenta e ");
     break;
   case 7:
     printf("setenta e ");
+    fprintf(arquivo,"setenta e ");
     break;
   case 8:
     printf("oitenta e ");
+    fprintf(arquivo,"oitenta e ");
     break;
   case 9:
     printf("noventa e ");
+    fprintf(arquivo,"noventa e ");
     break;
   }
 }
@@ -516,30 +599,39 @@ void CentenaExtenso(int Centena)
   {
   case 1:
     printf("cento e ");
+    fprintf(arquivo,"cento e ");
     break;
   case 2:
     printf("duzentos e ");
+    fprintf(arquivo,"duzentos e ");
     break;
   case 3:
     printf("trezentos e ");
+    fprintf(arquivo,"trezentos e ");
     break;
   case 4:
     printf("quatrocentos e ");
+    fprintf(arquivo,"quatrocentos e ");
     break;
   case 5:
     printf("quinhentos e ");
+    fprintf(arquivo,"quinhentos e ");
     break;
   case 6:
     printf("seiscentos e ");
+    fprintf(arquivo,"seiscentos e ");
     break;
   case 7:
     printf("setecentos e ");
+    fprintf(arquivo,"setecentos e ");
     break;
   case 8:
     printf("oitocentos e ");
+    fprintf(arquivo,"oitocentos e ");
     break;
   case 9:
     printf("novecentos e ");
+    fprintf(arquivo,"novecentos e ");
     break;
   }
 }
@@ -568,10 +660,6 @@ void conversor(float num_algarismo)
     CentenaDeMilharZeradaExtenso(CentenaDeMilhar);
   } else {
     CentenaDeMilharExtenso(CentenaDeMilhar);
-  }
-  if (DezenaDeMilhar)
-  {
-    /* code */
   }
   
   if (DezenaDeMilhar == 0 && Milhar == 0)
@@ -615,11 +703,14 @@ void conversor(float num_algarismo)
     UnidadeExtenso(Unidade);
   }
 
-  printf("Reais");
+  if(Milhao != 0 || CentenaDeMilhar != 0 || DezenaDeMilhar != 0 || Milhar != 0 || Centena != 0 || Dezena != 0 || Unidade!= 0){
+    printf("Reais e ");
+    fprintf(arquivo,"Reais e ");
+  }
 
   if (DezenaCentavos != 0 && UnidadeCentavos == 0)
   {
-    DezenaCentavosZeradaExtenso(DezenaCentavos);
+    DezenaCentavosExtenso(DezenaCentavos);
   }
   if (DezenaCentavos == 0 && UnidadeCentavos != 0)
   {
@@ -632,10 +723,15 @@ void conversor(float num_algarismo)
   if (DezenaCentavos != 0 && UnidadeCentavos != 0)
   {
     DezenaCentavosExtenso(DezenaCentavos);
+    printf(" e ");
+    fprintf(arquivo," e ");
     UnidadeCentavosExtenso(UnidadeCentavos);
   }
+  if(DezenaCentavos != 0 || UnidadeCentavos != 0){
+    printf(" Centavos\n");
+    fprintf(arquivo," Centavos");
+  }
   
-  printf(" Centavos\n");
 }
 
 void extenso()
@@ -646,12 +742,22 @@ void extenso()
   printf("Convertendo\n");
   printf("O valor %.2f por extenso fica: ", num_algarismo);
   conversor(num_algarismo);
+  fprintf(arquivo, ".\n");
+  
 }
 
+void criartxt(){
+  if(arquivo == NULL){
+    printf("Erro ao abrir arquivo");
+  } else {
+    printf("Sucesso ao abrir arquivo");
+  }
+}
 void exibirMenu()
 {
   int opcaoMenu;
   fflush(stdin);
+  criartxt();
   printf("1. Escrever um numero por extenso\n");
   printf("2. Imprimir todos os numeros do arquivo em tela\n");
   printf("3. Sair\n");
@@ -677,5 +783,6 @@ void exibirMenu()
 
 int main()
 {
+  arquivo = fopen("numerosextensos.txt", "a+");
   exibirMenu();
 }
