@@ -3,6 +3,108 @@
 #include <math.h>
 #include <string.h>
 
+void UnidadeCentavosExtenso(int UnidadeCentavos)
+{
+  switch (UnidadeCentavos)
+  {
+  case 1:
+    printf(" e um");
+    break;
+  case 2:
+    printf(" e dois");
+    break;
+  case 3:
+    printf(" e tres");
+    break;
+  case 4:
+    printf(" e quatro");
+    break;
+  case 5:
+    printf(" e cinco");
+    break;
+  case 6:
+    printf(" e seis");
+    break;
+  case 7:
+    printf(" e sete");
+    break;
+  case 8:
+    printf(" e oito");
+    break;
+  case 9:
+    printf(" e nove");
+    break;
+  }
+}
+
+void DezenaCentavosExtenso(int DezenaCentavos)
+{
+  switch (DezenaCentavos)
+  {
+  case 1:
+    printf(" e dez");
+    break;
+  case 2:
+    printf(" e vinte");
+    break;
+  case 3:
+    printf(" e trinta");
+    break;
+  case 4:
+    printf(" e quarenta");
+    break;
+  case 5:
+    printf(" e cinquenta");
+    break;
+  case 6:
+    printf(" e sessenta");
+    break;
+  case 7:
+    printf(" e setenta");
+    break;
+  case 8:
+    printf(" e oitenta");
+    break;
+  case 9:
+    printf(" e noventa");
+    break;
+  }
+}
+
+void DezenaCentavosZeradaExtenso(int DezenaCentavos)
+{
+  switch (DezenaCentavos)
+  {
+  case 1:
+    printf(" e dez");
+    break;
+  case 2:
+    printf(" e vinte");
+    break;
+  case 3:
+    printf(" e trinta");
+    break;
+  case 4:
+    printf(" e quarenta");
+    break;
+  case 5:
+    printf(" e cinquenta");
+    break;
+  case 6:
+    printf(" e sessenta");
+    break;
+  case 7:
+    printf(" e setenta");
+    break;
+  case 8:
+    printf(" e oitenta");
+    break;
+  case 9:
+    printf(" e noventa");
+    break;
+  }
+}
+
 void MilhaoExtenso(int Milhao)
 {
   switch (Milhao)
@@ -276,31 +378,31 @@ void CentenasZeradasExtenso(int Centena)
   switch (Centena)
   {
   case 1:
-    printf("Cem ");
+    printf("cem ");
     break;
   case 2:
-    printf("Duzentos ");
+    printf("duzentos ");
     break;
   case 3:
-    printf("Trezentos ");
+    printf("trezentos ");
     break;
   case 4:
-    printf("Quatrocentos ");
+    printf("quatrocentos ");
     break;
   case 5:
-    printf("Quinhentos ");
+    printf("quinhentos ");
     break;
   case 6:
-    printf("Seiscentos ");
+    printf("seiscentos ");
     break;
   case 7:
-    printf("Setecentos ");
+    printf("setecentos ");
     break;
   case 8:
-    printf("Oitocentos ");
+    printf("oitocentos ");
     break;
   case 9:
-    printf("Novecentos ");
+    printf("novecentos ");
     break;
   }
 }
@@ -413,36 +515,36 @@ void CentenaExtenso(int Centena)
   switch (Centena)
   {
   case 1:
-    printf("Cento e ");
+    printf("cento e ");
     break;
   case 2:
-    printf("Duzentos e ");
+    printf("duzentos e ");
     break;
   case 3:
-    printf("Trezentos e ");
+    printf("trezentos e ");
     break;
   case 4:
-    printf("Quatrocentos e ");
+    printf("quatrocentos e ");
     break;
   case 5:
-    printf("Quinhentos e ");
+    printf("quinhentos e ");
     break;
   case 6:
-    printf("Seiscentos e ");
+    printf("seiscentos e ");
     break;
   case 7:
-    printf("Setecentos e ");
+    printf("setecentos e ");
     break;
   case 8:
-    printf("Oitocentos e ");
+    printf("oitocentos e ");
     break;
   case 9:
-    printf("Novecentos e ");
+    printf("novecentos e ");
     break;
   }
 }
 
-void conversor(int num_algarismo)
+void conversor(float num_algarismo)
 {
   int Milhao, CentenaDeMilhar, DezenaDeMilhar, Milhar, Centena, Dezena, Unidade, DezenaCentavos, UnidadeCentavos;
   Milhao = fmod((num_algarismo / 1000000), 10);
@@ -452,6 +554,8 @@ void conversor(int num_algarismo)
   Centena = fmod((num_algarismo / 100), 10);
   Dezena = fmod((num_algarismo / 10), 10);
   Unidade = fmod(num_algarismo, 10);
+  DezenaCentavos = fmod((num_algarismo * 10), 10);
+  UnidadeCentavos = fmod((num_algarismo * 100), 10)+0.01;
   if (Milhao == 0 && CentenaDeMilhar ==0)
   {
     MilhaoZeradoExtenso(Milhao);
@@ -464,6 +568,10 @@ void conversor(int num_algarismo)
     CentenaDeMilharZeradaExtenso(CentenaDeMilhar);
   } else {
     CentenaDeMilharExtenso(CentenaDeMilhar);
+  }
+  if (DezenaDeMilhar)
+  {
+    /* code */
   }
   
   if (DezenaDeMilhar == 0 && Milhar == 0)
@@ -506,7 +614,28 @@ void conversor(int num_algarismo)
   {
     UnidadeExtenso(Unidade);
   }
+
   printf("Reais");
+
+  if (DezenaCentavos != 0 && UnidadeCentavos == 0)
+  {
+    DezenaCentavosZeradaExtenso(DezenaCentavos);
+  }
+  if (DezenaCentavos == 0 && UnidadeCentavos != 0)
+  {
+    UnidadeCentavosExtenso(UnidadeCentavos);
+  }
+  if (DezenaCentavos == 1)
+  {
+    DezAVinteExtenso(UnidadeCentavos);
+  }
+  if (DezenaCentavos != 0 && UnidadeCentavos != 0)
+  {
+    DezenaCentavosExtenso(DezenaCentavos);
+    UnidadeCentavosExtenso(UnidadeCentavos);
+  }
+  
+  printf(" Centavos\n");
 }
 
 void extenso()
