@@ -273,17 +273,14 @@ void conversor(float num_algarismo)
   }
   if (Unidade != 0)
   {
-    if (CentenaDeMilhar == 0 || DezenaDeMilhar == 0 || Milhar == 0 || Centena == 0 || Dezena == 0)
-    {
-      if (Dezena != 1 && Dezena >0)
+    // if (CentenaDeMilhar == 0 || DezenaDeMilhar == 0 || Milhar == 0 || Centena == 0)
+    // {
+      if (Dezena > 1)
       {
-        printf("e ");
-        fprintf(arquivo,"e ");
+        printf(" e ");
+        fprintf(arquivo," e ");
       }
-      
-      
-    }
-    
+    //}
   }
   
   if (Dezena == 1)
@@ -330,8 +327,8 @@ void conversor(float num_algarismo)
       fprintf(arquivo," e "); 
       }
       DezenaExtenso(DezenaCentavos);
-      printf("e ");
-      fprintf(arquivo,"e ");
+      printf(" e ");
+      fprintf(arquivo," e ");
       UnidadeExtenso(UnidadeCentavos);
     }
 
@@ -375,12 +372,12 @@ void exibirMenu()
   switch (opcaoMenu)
   {
   case 1:
-    arquivo = fopen("txt/numerosextensos.txt", "a+");
+    arquivo = fopen("numerosextensos.txt", "a+");
     extenso();
     fclose(arquivo);
     break;
   case 2:
-    arquivo = fopen("txt/numerosextensos.txt", "a+");
+    arquivo = fopen("numerosextensos.txt", "a+");
     lertudo();
     fclose(arquivo);
     break;
